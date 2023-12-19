@@ -1,75 +1,135 @@
+/* CSS Reset                                       */
+/* Credits to Andy Bell                            */
+/* https://andy-bell.co.uk/a-more-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/*                  */
+/* End of CSS Reset */
+/*                  */ 
+
+/* My CSS */
 :root {
     --bckg:  hsl(212, 45%, 89%);
     --bckg-container: hsl(0, 0%, 100%);
-    --att-a: hsl(228, 45%, 44%);
+}
+
+html {
+  font-size: 15px;
 }
 
 body {
     font-family: 'Outfit';
     background-color: var(--bckg);
     margin: 0;
-  }
-
-  .main {
-    width: 100%;
-    height: 100vh;
+    text-align: center;
+    min-height: 100vh;
     display: grid;
     place-items: center;
     background-color: var(--bckg);
+
   }
 
-  .main-cont {
+  main {
     display: grid;
+    grid-template-rows: auto 1fr auto;
     place-items: center;
-  }
-
-  .container {
-    display: grid;
-    grid-template-rows: auto 1fr auto;  /* grilla */
-    place-items: center;
-    width: 350px;
+    /* width: 350px; */
+    width: 23rem;
     background: var(--bckg-container);
     border-radius: 5%;
+    padding: 1rem;
   }
 
   .image-qr {
-    margin-top: 17px;
-    width: 90%;
+    display: block;
+    max-width: 100%;
     border-radius: 5%;
   }
 
   .title { 
-      font-size: 24px;
+      font-size: 1.5rem;
       font-weight: 700;
-      text-align: center;
-      width: 90%;
-      margin: 0;
-      padding: 20px 0 20px 0;
+      /* width: 90%; */
+      margin: 0 1rem;
+      padding: 1.33rem 0 ;
   }
 
   .para { 
-      font-size: 15px;
+      font-size: 1rem;
       font-weight: 400;
-      text-align: center;
-      width: 80%;
-      margin: 0;
-      padding-bottom: 40px;
-  }
-
-  .attribution {
-      justify-self: center;
-      align-self: start;
-      padding: 10px;
-      font-size: 11px;
-      text-align: center;
-  }
-  
-  .attribution a {
-      color: var(--att-a);
-  }
-
-  @media (max-width: 375px) {
-    .container {
-        width: 90%;
-    }
+      /* width: 80%; */
+      margin: 0 1.5rem;
+      padding-bottom: 2.66rem;
   }
